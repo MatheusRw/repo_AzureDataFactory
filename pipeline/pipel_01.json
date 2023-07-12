@@ -1,22 +1,22 @@
 {
-	"name": "pipe_01",
+	"name": "pipel_01",
 	"properties": {
 		"activities": [
 			{
-				"name": "Weithg_1",
+				"name": "Wait1",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 3
+					"waitTimeInSeconds": 5
 				}
 			},
 			{
-				"name": "wailt_2",
+				"name": "Wait2",
 				"type": "Wait",
 				"dependsOn": [
 					{
-						"activity": "Weithg_1",
+						"activity": "Wait1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -24,15 +24,13 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"waitTimeInSeconds": 4
+					"waitTimeInSeconds": 5
 				}
 			}
 		],
 		"folder": {
 			"name": "adf_01_pipeline_01"
 		},
-		"annotations": [],
-		"lastPublishTime": "2023-07-06T18:12:54Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
