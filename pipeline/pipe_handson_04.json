@@ -1,0 +1,66 @@
+{
+	"name": "pipe_handson_04",
+	"properties": {
+		"activities": [
+			{
+				"name": "Exec_pratica_01",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_handson_01",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Exec_pratica_02",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Exec_pratica_01",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_handson_02",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Exec_pratica_03",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Exec_pratica_02",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipe_handson_03",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "adf_03_handson_01"
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-07-12T17:39:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
